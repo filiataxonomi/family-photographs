@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Wilson Family Album</title>
+
+<!--
+  ============================================================
+  THE WILSON FAMILY ALBUM
+  ============================================================
+  HOW TO ADD YOUR OWN PHOTOS:
+  1. Put your photo files (jpg, png) into the 'photos' folder
+     next to this HTML file.
+  2. Scroll down to the GALLERY PHOTOS section below.
+  3. For each photo, add a line like:
+        figure tag with img src pointing to photos/YOURFILENAME.jpg
+  4. For a wide panorama that should span all columns, add class="wide"
+     to the figure tag.
+  5. Save the file. Done.
+  ============================================================
+-->
+
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background: #f5f5f3;
+    color: #1a1a1a;
+    padding: 40px 60px;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 100px;
+    padding: 20px;
+    border-bottom: none;
+  }
+
+  header .title {
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+  }
+
+  header .subtitle {
+    font-weight: 300;
+    color: #888;
+    font-size: 15px;
+    text-align: right;
+    letter-spacing: 0.2px;
+  }
+
+  .gallery {
+    column-count: 4;
+    column-gap: 50px;
+    padding: 0 20px;
+  }
+
+  .gallery figure {
+    break-inside: avoid;
+    margin: 0 0 50px 0;
+    cursor: pointer;
+    transition: opacity 0.25s ease;
+    display: block;
+    width: 100%;
+  }
+
+  .gallery figure:hover {
+    opacity: 0.75;
+  }
+
+  .gallery figure img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  /* Wide panorama — spans whole width, breaks out of columns */
+  .gallery figure.wide {
+    -webkit-column-span: all;
+    column-span: all;
+    margin: 80px 0;
+    width: 100%;
+  }
+
+  /* Lightbox (click photo to enlarge) */
+  .lightbox {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(10,10,10,0.94);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    cursor: pointer;
+    padding: 40px;
+  }
+
+  .lightbox.open { display: flex; }
+
+  .lightbox img {
+    max-width: 95%;
+    max-height: 95%;
+    object-fit: contain;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+  }
+
+  .lightbox .close-hint {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: #fff;
+    font-size: 14px;
+    letter-spacing: 1px;
+  }
+
+  footer {
+    text-align: center;
+    padding: 80px 0 20px;
+    color: #888;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+  }
+
+  /* Tablet */
+  @media (max-width: 1000px) {
+    body { padding: 30px; }
+    .gallery { column-count: 2; column-gap: 30px; }
+    .gallery figure { margin-bottom: 30px; }
+    header { margin-bottom: 60px; }
+  }
+
+  /* Phone */
+  @media (max-width: 550px) {
+    body { padding: 20px; }
+    .gallery { column-count: 1; column-gap: 0; }
+    header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 8px;
+    }
+    header .subtitle {
+      text-align: left;
+    }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="title">WILSON FAMILY PHOTOGRAPHS</div>
+  <div class="subtitle">archived in a tin shed in boyup brook</div>
+</header>
+
+<!-- ============== GALLERY PHOTOS ============== -->
+<div class="gallery">
+
+  <figure><img src="photos/IMG_0428.jpg" alt="Wilson family photo"></figure>
+  <figure><img src="photos/IMG_0432.jpg" alt="Wilson family photo"></figure>
+  <figure><img src="photos/IMG_0435.jpg" alt="Wilson family photo"></figure>
+  <figure><img src="photos/IMG_0447.jpg" alt="Wilson family photo"></figure>
+  <figure><img src="photos/IMG_0434.jpg" alt="Wilson family photo"></figure>
+  <figure><img src="photos/IMG_0450.jpg" alt="Wilson family photo"></figure>
+  <figure><img src="photos/IMG_0446.jpg" alt="Wilson family photo"></figure>
+  <figure class="wide"><img src="photos/IMG_0452.jpg" alt="Wilson family photo"></figure>
+  <figure><img src="photos/IMG_0458.jpg" alt="Wilson family photo"></figure>
+  <figure><img src="photos/IMG_0460.jpg" alt="Wilson family photo"></figure>
+  <figure><img src="photos/IMG_0461.jpg" alt="Wilson family photo"></figure>
+  <figure><img src="photos/IMG_0462.jpg" alt="Wilson family photo"></figure>
+  <figure><img src="photos/IMG_0463.jpg" alt="Wilson family photo"></figure>
+  <figure><img src="photos/IMG_0467.jpg" alt="Wilson family photo"></figure>
+  <figure><img src="photos/IMG_0468.jpg" alt="Wilson family photo"></figure>
+  <figure><img src="photos/IMG_0472.jpg" alt="Wilson family photo"></figure>
+  <figure><img src="photos/IMG_0474.jpg" alt="Wilson family photo"></figure>
+  <figure><img src="photos/IMG_0449.jpg" alt="Wilson family photo"></figure>
+  <figure><img src="photos/IMG_0464.jpg" alt="Wilson family photo"></figure>
+  <figure><img src="photos/IMG_0479.jpg" alt="Wilson family photo"></figure>
+  <figure><img src="photos/IMG_0482.jpg" alt="Wilson family photo"></figure>
+  <figure><img src="photos/IMG_0469.jpg" alt="Wilson family photo"></figure>
+  <figure><img src="photos/IMG_0456.jpg" alt="Wilson family photo"></figure>
+  <figure><img src="photos/IMG_0465.jpg" alt="Wilson family photo"></figure>
+  <figure><img src="photos/IMG_0466.jpg" alt="Wilson family photo"></figure>
+  <figure><img src="photos/IMG_0470.jpg" alt="Wilson family photo"></figure>
+  <figure><img src="photos/IMG_0471.jpg" alt="Wilson family photo"></figure>
+  <figure><img src="photos/IMG_0473.jpg" alt="Wilson family photo"></figure>
+  <figure><img src="photos/IMG_0475.jpg" alt="Wilson family photo"></figure>
+  <figure class="wide"><img src="photos/IMG_0457.jpg" alt="Wilson family photo"></figure>
+  <figure><img src="photos/IMG_0476.jpg" alt="Wilson family photo"></figure>
+  <figure><img src="photos/IMG_0477.jpg" alt="Wilson family photo"></figure>
+  <figure><img src="photos/IMG_0478.jpg" alt="Wilson family photo"></figure>
+  <figure><img src="photos/IMG_0480.jpg" alt="Wilson family photo"></figure>
+  <figure><img src="photos/IMG_0481.jpg" alt="Wilson family photo"></figure>
+
+</div>
+<!-- ============== END GALLERY ============== -->
+
+<footer>
+  A Wilson family archive &middot; Images remain property of the family
+</footer>
+
+<!-- Lightbox (don't need to edit anything below this line) -->
+<div class="lightbox" onclick="this.classList.remove('open')">
+  <span class="close-hint">CLICK ANYWHERE TO CLOSE</span>
+  <img src="" alt="">
+</div>
+
+<script>
+  const lightbox = document.querySelector('.lightbox');
+  const lightboxImg = lightbox.querySelector('img');
+
+  document.querySelectorAll('.gallery figure').forEach(fig => {
+    fig.addEventListener('click', () => {
+      const img = fig.querySelector('img');
+      lightboxImg.src = img.src;
+      lightboxImg.alt = img.alt;
+      lightbox.classList.add('open');
+    });
+  });
+
+  // Close lightbox on ESC key
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') lightbox.classList.remove('open');
+  });
+</script>
+
+</body>
+</html>
